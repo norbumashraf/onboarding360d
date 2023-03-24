@@ -317,13 +317,7 @@ export default function Home() {
                   onChange={handleQueryParameterChange}
                   optional
                 />
-                <Input
-                  label="Client ID (Partner Payload)"
-                  name="partnerPayload"
-                  value={queryParametersState.partnerPayload}
-                  onChange={handleQueryParameterChange}
-                  optional
-                />
+
 
                 {showScrollLabel && (
                   <div
