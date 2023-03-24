@@ -217,7 +217,22 @@ export default function Home() {
 
       <main className="w-screen h-screen flex flex-col overflow-hidden">
         <Header />
-
+                <ConnectButton
+partnerId={f167CmPA}
+callback={() => {
+  console.log("Client ID: " + callbackObject.client);
+  console.log("Channel IDs: " + callbackObject.channels);
+  if (callbackObject.revokedChannels) {
+    console.log("Revoked Channel IDs: " + callbackObject.revokedChannels);
+  }
+}}
+className="" // <-- Insert your own styles via className definition or through inline styling
+label="WABA Onboarding"
+queryParameters={{
+	redirect_url: "http://google.com/test",
+	next: "login"
+}}
+/>
         <div className="flex flex-col pt-4 px-8 grow h-1/3">
           <div className="h-1/3 grow overflow-hidden flex flex-row pt-6 pb-6 gap-6 min-w-fit">
             <div
@@ -269,22 +284,7 @@ export default function Home() {
                   <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[26px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                 </label>
 
-                <ConnectButton
-partnerId={f167CmPA}
-callback={() => {
-  console.log("Client ID: " + callbackObject.client);
-  console.log("Channel IDs: " + callbackObject.channels);
-  if (callbackObject.revokedChannels) {
-    console.log("Revoked Channel IDs: " + callbackObject.revokedChannels);
-  }
-}}
-className="" // <-- Insert your own styles via className definition or through inline styling
-label="WABA Onboarding"
-queryParameters={{
-	redirect_url: "http://google.com/test",
-	next: "login"
-}}
-/>
+
                 
                 <div>
                   <div className="h-px w-full bg-gray-300 mt-9 mb-6" />
