@@ -230,6 +230,7 @@ export default function Home() {
                 <p className="text-sm font-medium text-gray-900 mt-2">
                   General
                 </p>
+ /* Norbu       
                 <Input
                   label="Partner ID"
                   value={partnerId}
@@ -310,7 +311,7 @@ export default function Home() {
                   onChange={handleQueryParameterChange}
                   optional
                 />
-/^ Norbu    
+  
                 <Input
                   label="Name"
                   name="clientName"
