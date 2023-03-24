@@ -225,29 +225,7 @@ export default function Home() {
               onScroll={handleScroll}
               ref={scrollContainerRef}
             >
-              <p className="text-md font-bold text-gray-700">Configure</p>
-              <div className="relative flex flex-col px-2 py-8 gap-6 min-w-fit max-w-md">
-                <p className="text-sm font-medium text-gray-900 mt-2">
-                  General
-                </p>
-                <Input
-                  label="Partner ID"
-                  value={partnerId}
-                  onChange={(e) => setPartnerId(e.target.value)}
-                  placeholder="Your Partner ID"
-                  button={{
-                    paddingRight: "pr-44",
-                    component: (
-                      <Button
-                        disabled={partnerId === demoPartnerId}
-                        onClick={() => setPartnerId(demoPartnerId)}
-                      >
-                        ← Insert Demo Partner
-                      </Button>
-                    ),
-                  }}
-                />
-                
+               // - -NORBU 
 
                 {showScrollLabel && (
                   <div
