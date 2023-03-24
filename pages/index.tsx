@@ -230,7 +230,7 @@ export default function Home() {
                 <p className="text-sm font-medium text-gray-900 mt-2">
                   General
                 </p>
- /* Norbu       
+      
                 <Input
                   label="Partner ID"
                   value={partnerId}
@@ -255,7 +255,7 @@ export default function Home() {
                   optional
                   placeholder="Create your WhatsApp Business Account"
                 />
-
+ /* Norbu 
                 <label className="inline-flex relative items-center justify-between cursor-pointer mt-2 pr-1">
                   <span className="block text-sm font-medium text-gray-500">
                     Show login
