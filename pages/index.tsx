@@ -218,7 +218,141 @@ export default function Home() {
       <main className="w-screen h-screen flex flex-col overflow-hidden">
         <Header />
 
-//Norbu
+        <div className="flex flex-col pt-4 px-8 grow h-1/3">
+          <div className="h-1/3 grow overflow-hidden flex flex-row pt-6 pb-6 gap-6 min-w-fit">
+            <div
+              className="overflow-auto relative grow-0 pr-6 min-w-fit"
+              onScroll={handleScroll}
+              ref={scrollContainerRef}
+            >
+              <p className="text-md font-bold text-gray-700">Configure</p>
+              <div className="relative flex flex-col px-2 py-8 gap-6 min-w-fit max-w-md">
+                <p className="text-sm font-medium text-gray-900 mt-2">
+                  General
+                </p>
+                <Input
+                  label="Partner ID"
+                  value={partnerId}
+                  onChange={(e) => setPartnerId(e.target.value)}
+                  placeholder="Your Partner ID"
+                  button={{
+                    paddingRight: "pr-44",
+                    component: (
+                      <Button
+                        disabled={partnerId === demoPartnerId}
+                        onClick={() => setPartnerId(demoPartnerId)}
+                      >
+                        ← Insert Demo Partner
+                      </Button>
+                    ),
+                  }}
+                />
+                <Input
+                  label="Button Label"
+                  value={label}
+                  onChange={(e) => setLabel(e.target.value)}
+                  optional
+                  placeholder="Create your WhatsApp Business Account"
+                />
+
+                <label className="inline-flex relative items-center justify-between cursor-pointer mt-2 pr-1">
+                  <span className="block text-sm font-medium text-gray-500">
+                    Show login
+                  </span>
+                  <input
+                    type="checkbox"
+                    name="next"
+                    value={queryParametersState.next}
+                    className="sr-only peer"
+                    onChange={handleToggleChange}
+                  />
+                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[26px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                </label>
+
+                <div>
+                  <div className="h-px w-full bg-gray-300 mt-9 mb-6" />
+                  <p className="text-sm font-medium text-gray-900">
+                    Synchronization Parameters
+                  </p>
+                </div>
+
+                <Input
+                  label="Redirect URL"
+                  name="redirectUrl"
+                  value={queryParametersState.redirectUrl}
+                  onChange={handleQueryParameterChange}
+                  optional
+                />
+                <Input
+                  label="State"
+                  name="forwardState"
+                  value={queryParametersState.forwardState}
+                  onChange={handleQueryParameterChange}
+                  optional
+                />
+
+                <div>
+                  <div className="h-px w-full bg-gray-300 mt-9 mb-6" />
+                  <p className="text-sm font-medium text-gray-900">
+                    Client Data
+                  </p>
+                </div>
+                <Input
+                  label="Number"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                  optional
+                />
+                <Input
+                  label="Email"
+                  name="email"
+                  value={queryParametersState.email}
+                  onChange={handleQueryParameterChange}
+                  optional
+                />
+/^ Norbu    
+                <Input
+                  label="Name"
+                  name="clientName"
+                  value={queryParametersState.clientName}
+                  onChange={handleQueryParameterChange}
+                  optional
+                />
+                <Input
+                  label="Client ID (Partner Payload)"
+                  name="partnerPayload"
+                  value={queryParametersState.partnerPayload}
+                  onChange={handleQueryParameterChange}
+                  optional
+                />
+By Norbu */
+                {showScrollLabel && (
+                  <div
+                    style={{ top: scrollContainerHeight + "px" }}
+                    className="absolute z-20 left-1/2 -translate-x-1/2 flex flex-row gap-1 text-white bg-gray-800 rounded rounded-2xl pl-2 pr-4 py-1 text-xs drop-shadow-md whitespace-nowrap"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 5a.75.75 0 01.75.75v6.638l1.96-2.158a.75.75 0 111.08 1.04l-3.25 3.5a.75.75 0 01-1.08 0l-3.25-3.5a.75.75 0 111.08-1.04l1.96 2.158V5.75A.75.75 0 0110 5z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    Scroll to reveal all parameters
+                  </div>
+                )}
+                {/* <div
+                  style={{ top: scrollContainerHeight + 115 + "px" }}
+                  className="fixed z-10 bg-gradient-to-b from-transparent to-white h-12 w-1/2 max-w-md"
+                /> */}
+              </div>
+            </div>
+
             <div className="flex flex-col grow pr-6 overflow-auto">
               <div className="flex flex-col grow">
                 <p className="text-md font-bold text-gray-700 flex-none">
